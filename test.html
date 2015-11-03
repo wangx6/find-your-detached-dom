@@ -1,0 +1,45 @@
+<html>
+	<body>
+		<div>
+			<button id="addmore"> add more </button>
+			<button id="removeall"> remove all </button>
+			<div class="wrapppp" id="p"></div>
+		</div>
+	<script>
+		
+
+		var wrap = document.querySelector('#p'),
+			holder = {
+				arr: []
+			},
+			secArray = [],
+			thirdArr = [],
+			add = document.querySelector('#addmore'),
+			rev = document.querySelector('#removeall'),
+			removeFn, addFn;
+
+		removeFn = function() {
+			wrap.innerHTML = '';
+		};
+
+		addFn = function() {
+			var frag = document.createDocumentFragment(),
+				i = 10000, dom;
+
+			for(;i--;) {
+				dom = document.createElement('div');
+				dom.innerHTML = 'test div ' + i;
+				holder.arr.push(dom);
+				frag.appendChild(dom);	
+			}
+			wrap.appendChild(frag);
+		};
+
+		add.onclick = addFn;
+		rev.onclick = removeFn;
+
+
+	</script>
+	</body>
+
+</html>
