@@ -9,9 +9,9 @@
 		
 
 		var wrap = document.querySelector('#p'),
-			holder = {
-				arr: []
-			},
+			// this will hode the removed dom to prevent the doms
+			// from getting GCed
+			holder = { arr: [] },
 			secArray = [],
 			thirdArr = [],
 			add = document.querySelector('#addmore'),
